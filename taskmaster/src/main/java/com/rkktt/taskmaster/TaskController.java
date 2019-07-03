@@ -29,8 +29,7 @@ public class TaskController {
     @PostMapping("/tasks")
     //A user should be able to make a POST request to /tasks with body parameters
     //for title and description to add a new task
-
-    public @ResponseBody TaskInfo setTask(@ModelAttribute TaskInfo taskInfo){
+    public @ResponseBody TaskInfo setTask(@RequestBody TaskInfo taskInfo){
         //start task with status of "Available"
         taskInfo.setStatus(status[0]);
         taskInfoRepository.save(taskInfo);

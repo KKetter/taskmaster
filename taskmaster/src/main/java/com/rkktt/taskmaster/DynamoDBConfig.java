@@ -16,7 +16,10 @@ import org.springframework.util.StringUtils;
     @Configuration
     @EnableDynamoDBRepositories (basePackages = "com.rkktt.taskmaster")
     public class DynamoDBConfig {
-
+        //pasted from app.properties
+//        amazon.dynamodb.endpoint=
+//        amazon.aws.accesskey=${AWS_ACCESS_KEY}
+//        amazon.aws.secretkey=${AWS_SECRET_KEY}
         @Value("${amazon.dynamodb.endpoint}")
         private String amazonDynamoDBEndpoint;
 

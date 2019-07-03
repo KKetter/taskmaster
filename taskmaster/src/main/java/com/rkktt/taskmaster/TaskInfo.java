@@ -17,7 +17,6 @@ public class TaskInfo {
     public TaskInfo(String title, String desc) {
         this.title = title;
         this.desc = desc;
-
     }
 
     @DynamoDBHashKey
@@ -52,7 +51,7 @@ public class TaskInfo {
         return status;
     }
 
-    public void setStatus(String msrp) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

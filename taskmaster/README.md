@@ -1,10 +1,13 @@
 ##Taskmaster
-An application to track to do tasks allowing the user to see a description of the task 
-and its current status(Available or Complete).
-
+An application to track tasks, allowing the user to see a description of the task and its current status
 
 ###Deployment
-[Taskmaster Deployment - Broken Link](www.workingurl.com)
+[Taskmaster Deployment](taskmastereb-dev.us-west-2.elasticbeanstalk.com)
+
+###Routes
+    /tasks            - GET
+    /tasks            - POST with body parameters for title and description of task
+    /tasks/{id}/state - PUT allows user to advance status of a task
 
 ###Issues
-Integeration Test Passing - uncertain on deployment with RDS Cheatsheet when we just need to deploy to EC2
+
