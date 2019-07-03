@@ -31,9 +31,8 @@ public class TaskInfoRepositoryIntegrationTest {
     @Autowired
     TaskInfoRepository repository;
 
-    private static final String EXPECTED_TITLE = "Dishes";
-    private static final String EXPECTED_DESC = "Suds n Bubbles";
-    private static final String EXPECTED_STATUS = "Available";
+    private String EXPECTED_TITLE = "Dishes";
+    private String EXPECTED_DESC = "Suds n Bubbles";
 
     @Before
     public void setup() throws Exception {
@@ -48,7 +47,7 @@ public class TaskInfoRepositoryIntegrationTest {
 
     @Test
     public void readWriteTestCase() {
-        TaskInfo brotato = new TaskInfo(EXPECTED_TITLE, EXPECTED_DESC, EXPECTED_STATUS);
+        TaskInfo brotato = new TaskInfo(EXPECTED_TITLE, EXPECTED_DESC);
         repository.save(brotato);
 
         List<TaskInfo> result = (List<TaskInfo>) repository.findAll();

@@ -42,12 +42,11 @@ import org.springframework.util.StringUtils;
 
         @Bean
         public AWSCredentials amazonAWSCredentials() {
-            return new BasicAWSCredentials(
-                    amazonAWSAccessKey, amazonAWSSecretKey);
+            return new BasicAWSCredentials(amazonAWSAccessKey, amazonAWSSecretKey);
         }
 
         @Bean
-        public DynamoDB dynamDB(AmazonDynamoDB amazonDynamoDB){return new DynamoDB(amazonDynamoDB);}
+        public DynamoDB dynamoDB(AmazonDynamoDB amazonDynamoDB){return new DynamoDB(amazonDynamoDB);}
 
     }
 

@@ -7,4 +7,4 @@ and its current status(Available or Complete).
 [Taskmaster Deployment - Broken Link](www.workingurl.com)
 
 ###Issues
-Integration tests still failing with "Failed to Load Application Context"
+Integeration Test Passing - uncertain on deployment with RDS Cheatsheet when we just need to deploy to EC2
