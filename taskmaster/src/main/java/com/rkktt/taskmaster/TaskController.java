@@ -31,6 +31,7 @@ public class TaskController {
     //for title and description to add a new task
     public @ResponseBody TaskInfo setTask(@RequestBody TaskInfo taskInfo){
         //start task with status of "Available"
+        //add conditional logic if has assignee then status is set to Assigned, 0 if no assignee
         taskInfo.setStatus(status[0]);
         taskInfoRepository.save(taskInfo);
         return taskInfoRepository.findById(taskInfo.getId()).get();
@@ -52,7 +53,10 @@ public class TaskController {
         // save the change
         taskInfoRepository.save(potato);
     }
-
-
+    @GetMapping("/users/{name}/tasks")
+    public List<TaskInfo> getAssignee(@PathVariable String name) {
+        System.out.println("LOOK HERERERERRERER DUDE" + name);
+        return taskInfoRepository.findByAssignee(name);
+    }
 }
 

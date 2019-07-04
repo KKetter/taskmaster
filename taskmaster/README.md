@@ -17,5 +17,5 @@ An application to track tasks, allowing the user to see a description of the tas
                       
 
 ###Issues
-Updated actions of routes from Lab26 to Lab27 is in processs
+Updated actions of routes from Lab26 to Lab27 is in process
 

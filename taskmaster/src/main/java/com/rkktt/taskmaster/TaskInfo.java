@@ -11,6 +11,8 @@ public class TaskInfo {
     private String title;
     private String desc;
     private String status;
+    //lab27 adds assignee
+    private String assignee;
 
     public TaskInfo(){};
 
@@ -54,6 +56,16 @@ public class TaskInfo {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @DynamoDBAttribute
+    public String getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
+    }
+
 
 
 }
