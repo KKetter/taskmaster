@@ -6,7 +6,7 @@ An application to track tasks, allowing the user to see a description of the tas
 
 ###Routes
     /tasks            - GET
-    /tasks            - POST with body parameters for title and description of task
+    /tasks            - POST with body parameters for title,description, status(matching assignee status), and if present assignee
     /tasks/{id}/state - PUT allows user to advance status of a task
     /tasks/{id}       - DELETE delete a task with the given id
     /users/{name}/tasks?status=assigned
