@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
-
+@CrossOrigin
 @RestController
+@RequestMapping("/api")
 public class TaskController {
     //Johnny Winters provided status array implementation
     public String[] status = {"Available", "Assigned", "Accepted", "Finished"};
