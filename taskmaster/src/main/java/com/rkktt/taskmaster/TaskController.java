@@ -2,10 +2,13 @@ package com.rkktt.taskmaster;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import jdk.internal.org.jline.utils.ShutdownHooks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.rkktt.taskmaster.S3Client;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +26,9 @@ public class TaskController {
 
     @Autowired
     TaskInfoRepository taskInfoRepository;
+
+    //this is part of the s3client integration...I dont really understand this
+    private S3Client s3Client;
 
     @GetMapping("/tasks")
     public List<TaskInfo> getTasks(){
@@ -42,6 +48,15 @@ public class TaskController {
         }
         taskInfoRepository.save(taskInfo);
         return new ResponseEntity(taskInfo, HttpStatus.OK);
+    }
+    //POST ROUTE FOR IMAGES
+    @PostMapping("/tasks/{id}/images")
+    public @ResponseBody TaskInfo uploadImage(@PathVariable String id, @RequestPart(value = "file") MultipartFile file){
+        String image = this.s3Client.uploadFile(file);
+        TaskInfo potato = taskInfoRepository.findById(id).get();
+        potato.setImage(image);
+        taskInfoRepository.save(potato);
+        return potato;
     }
     //A user should be able to make a PUT request to /tasks/{id}/state to advance the status of that task.
     @PutMapping("/tasks/{id}/state")
@@ -66,4 +81,6 @@ public class TaskController {
         return taskInfoRepository.findByAssignee(name);
     }
 }
+
+
 
