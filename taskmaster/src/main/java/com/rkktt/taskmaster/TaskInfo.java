@@ -14,7 +14,9 @@ public class TaskInfo {
     //lab27 adds assignee
     private String assignee;
 
-    public TaskInfo(){};
+    private String image;
+
+    public TaskInfo(){}
 
     public TaskInfo(String title, String desc) {
         this.title = title;
@@ -26,15 +28,14 @@ public class TaskInfo {
     public String getId() {
         return this.id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
+
     @DynamoDBAttribute
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -43,7 +44,6 @@ public class TaskInfo {
     public String getDesc() {
         return desc;
     }
-
     public void setDesc(String desc) {
         this.desc = desc;
     }
@@ -52,7 +52,6 @@ public class TaskInfo {
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
@@ -61,10 +60,18 @@ public class TaskInfo {
     public String getAssignee() {
         return assignee;
     }
-
     public void setAssignee(String assignee) {
         this.assignee = assignee;
     }
+
+    @DynamoDBAttribute
+    public String getImage(){
+        return image;
+    }
+    public void setImage(String image){
+        this.image = image;
+    }
+
 
 
 
