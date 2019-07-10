@@ -23,7 +23,11 @@ An application to track tasks, allowing the user to see a description of the tas
 
 ###Issues
 Completed through Lab28
+Lab 31
 TO DO: 
     GET  /tasks/{id} should include image url
     POST /tasks/{id}/images
+Lab 31
+TO DO:
+    LAMBDA Integration
 
